@@ -1,0 +1,589 @@
+body {
+    font-family: 'Montserrat', sans-serif; 
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+}
+  
+.hero { 
+    background-image: url('images/backgroundimage.jpg'); 
+    background-size: cover;
+    background-position: center;
+}
+  
+header {
+    color: #fff;
+    padding: 0.3rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    background-color: black;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header h1 a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    padding-right: 3rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+nav ul li {
+    margin-left: 1.5rem;
+    margin-right: 0.5rem;
+    position: relative;
+}
+
+nav a {
+    text-decoration: none;
+    color: inherit;
+    background-color: transparent;
+    display: block;
+    padding: 7px 10px;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav a:hover {
+    color: black;
+    background-color: #f0f4f8;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.checkbtn {
+    font-size: 22px;
+    color: white;
+    float: right;
+    line-height: 80px;
+    margin-right: 45px;
+    cursor: pointer;
+    display: none;
+    transition: display 0.3s ease;
+}
+
+#check {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+@media (max-width: 890px) {
+    .checkbtn {
+        display: block;
+    }
+    
+    ul {
+        position: fixed;
+        width: 20%;
+        height: 100vh;
+        background: #2c3e50;
+        top: 89px;
+        left: -100%;
+        text-align: center;
+        transition: all .5s ease;
+        
+    }
+    nav ul li {
+        display: block;
+        margin: 50px 0;
+        margin-left: 10px;
+        line-height: 30px;
+    }
+    nav ul li a {
+        font-size: 20px;
+    }
+    a:hover,
+    a.active {
+        background: none;
+        color: #0082e6;
+    }
+    #check:checked~ul {
+        left: 0;
+    }
+   ul {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+    #check:checked ~ ul {
+    display: block;
+    opacity: 1;
+}
+    nav ul li a {
+        padding: 10px;
+        width:100%;
+        border-radius: 5px;
+    }
+    nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.82);
+    color: rgba(0, 0, 0, 0.591);
+    transition: background-color 0.3s ease;
+    }
+}
+
+.hero {
+    background-attachment: fixed; 
+    color: white;
+    text-align: center;
+    padding: 10rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+  
+.hero h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+  
+@media (max-width: 768px) {
+    .hero h2 {
+        font-size: 2.5rem; 
+    }
+}
+  
+@media (max-width: 480px) {
+    .hero h2 {
+        font-size: 2rem; 
+    }
+}
+  
+.hero p {
+    font-size: 1.5rem;
+    max-width: 37.5rem;
+}
+  
+.about center {
+    padding-top: 3rem;
+    font-size: x-large;
+    font-weight: bold;
+}
+  
+.services {
+    padding: 4rem 2rem;
+}
+  
+.services center {
+    margin-bottom: 2rem;
+    margin-left: 2rem;
+    font-weight: bold;
+    font-size: x-large;
+}
+  
+.service-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(18.75rem, 1fr)); 
+    grid-gap: 2rem;
+}
+  
+.card {
+    background-color: #fff;
+    border-radius: 0.3125rem;
+    padding: 1rem;
+    transition: transform 0.3s ease;
+    position: relative;
+}
+
+.card img {
+    width: 100%; 
+    height: 50%; 
+    object-fit: cover; 
+    margin-bottom: 0.5rem;
+}
+
+.card p {
+    font-family: 'Arial', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 500;
+    line-height: 1.5;
+    color: #333;
+    text-align: center;
+    margin: 0.5rem;
+    padding: 0.5rem;
+    padding-left: 0.75rem;
+}
+  
+.card:hover {
+    transform: translateY(-0.3125rem); 
+}
+  
+.card center {
+    margin-bottom: 1rem;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: x-large;
+}
+  
+#appointments {
+    text-align: center; 
+    padding: 5rem 0; 
+}
+  
+#appointments center {
+    font-size: 2rem; 
+    margin-bottom: 7rem; 
+}
+  
+#appointments p {
+    font-size: 1.25rem;
+    color: black;
+    background-color: #150d0d0e;
+    padding: 2rem 10rem; 
+    display: inline-block;
+}
+  
+.c1 {
+    font-size: x-large;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-bottom: 5rem;
+}
+  
+.c2 {
+    padding: 2rem 3rem;
+    font-size: x-large;
+}
+  
+#contact p {
+    padding-bottom: 2rem;
+    text-align: center;
+    font-size: larger;
+}
+  
+.contact-info {
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0rem;
+}
+  
+.contact-info > div {
+    text-align: left;
+    padding: 4rem;
+}
+  
+.contact-info .address {
+    text-align: center;
+}
+  
+.hours h3 {
+    text-align: center;
+}
+  
+#number {
+    padding: 0.5rem;
+    color: rgb(72, 71, 71);
+}
+  
+.chatbot-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+}
+
+.chatbot-button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #90caf9; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.chatbot-icon {
+    width: 25px;
+    height: 25px;
+    fill: #333; 
+}
+
+.chat-window {
+    position:fixed;
+    bottom: 1.2rem;
+    right: 1.2rem;
+    background-color: #fff;
+    border-radius: 1rem;
+    padding: 1.2rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    display: none;
+    width: 300px; 
+    max-width: 90vw;
+    max-height: 60vh; 
+    overflow-x: hidden;
+    overflow-y: auto;
+    transition: all 0.3s ease;
+    transform: translateY(20px);
+    opacity: 0;
+}
+
+@media (max-width: 768px) {
+    .chat-window {
+        max-width: 90%; 
+        width: 90%; 
+        height: 60vh; 
+        bottom: 10px; 
+        right: 10px; 
+    }
+}
+
+@media (max-width: 600px) {
+    .chat-window {
+        max-width: 95%;
+        width: 75%; 
+        height: 70vh; 
+        bottom: 5px; 
+        right: 5px; 
+    }
+}
+
+@media (max-width: 480px) {
+    .chat-window {
+        max-width: 100%; 
+        width: 50%; 
+        height: 50vh; 
+        bottom: 0; 
+        right: 0;
+        border-radius: 0;
+    }
+}
+
+.chat-window.visible {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+
+
+.chat-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.chat-title {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.close-button {
+    cursor: pointer;
+}
+
+.chat-messages {
+    max-height: 200px;
+    overflow-y: auto;
+    margin-bottom: 10px;
+}
+
+.chat-message {
+    margin-bottom: 5px;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.chat-message.bot {
+    background-color: #f0f4f8;
+    padding: 12px;
+    border-radius: 8px;
+    margin: 8px 0;
+    line-height: 1.5;
+    color: #333;
+    position: relative;
+}
+
+.chat-message.bot::before {
+    content: '';
+    position: absolute;
+    left: -8px;
+    top: 12px;
+    width: 0;
+    height: 0;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-right: 8px solid #f0f4f8;
+}
+
+.form-group {
+    margin-bottom: 10px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 90%;
+    padding: 12px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    background-color: #f8f9fa;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #90caf9;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(144, 202, 249, 0.2);
+    background-color: #fff;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.chat-input {
+    display: flex;
+}
+
+button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background-color: #90caf9;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #64b5f6;
+    transform: translateY(-1px);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+button[type="submit"]:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+footer {
+    color: black;
+    text-align: center;
+    padding: 1rem 0;
+    position: relative;
+    bottom: 0; 
+    width: 100%;
+}
+
+.my-button {
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 0.3125rem; 
+    padding: 0.625rem 1.25rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    position: absolute;
+    top: 1.25rem;
+    left: 4rem;
+    z-index: 1000;
+}
+
+.my-button:hover {
+    background-color: #333; 
+}
+
+#map {
+    height: 25rem;
+    width: 100%;
+    margin: 2rem 0;
+    position: relative;
+}
+
+.directions-container {
+    position: relative;
+    z-index: 1000;
+}
+
+.leaflet-routing-container {
+    background: white;
+    padding: 1rem;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    max-width: 400px;
+    width: 100%;
+    transition: all 0.3s ease;
+    position: absolute;
+    z-index: 1000;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.leaflet-routing-container h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.leaflet-routing-container .leaflet-routing-alt {
+    max-height: 60vh;
+    overflow-y: auto;
+}
+
+@media screen and (max-width: 48rem) { 
+    .service-cards {
+        grid-template-columns: 1fr; 
+    }
+
+    .hero h2 {
+        font-size: 2rem;
+    }
+
+    .card p {
+        font-size: 1rem;
+    }
+
+    .contact-info {
+        flex-direction: column; 
+        align-items: center; 
+    }
+
+    .leaflet-routing-container {
+        max-width: 300px;
+        padding: 0.5rem;
+        font-size: 0.9rem;
+        top: 4rem;
+        left: 0.5rem;
+    }
+  
+    .leaflet-routing-container h3 {
+        font-size: 1.1rem;
+    }
+}
+  .leaflet-routing-container h3 {
+    font-size: 1rem;
+  }
+
+@media screen and (max-height: 500px) {
+  .leaflet-routing-container {
+    max-height: 60vh;
+  }
+  
+  .leaflet-routing-container .leaflet-routing-alt {
+    max-height: 50vh;
+  }
+}
