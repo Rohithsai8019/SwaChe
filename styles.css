@@ -3,34 +3,81 @@ body {
     margin: 0;
     padding: 0;
     background-color: #fff;
+
+
 }
-  
-.hero { 
-    background-image: url('images/backgroundimage.jpg'); 
-    background-size: cover;
-    background-position: center;
-}
-  
-header {
-    color: #fff;
-    padding: 0.3rem 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: fixed;
-    background-color: black;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 100;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+.main-container{
+    overflow-x: hidden;
 }
 
-header h1 a {
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
+.navbar {
+    height: 80px; 
+    padding: 15px 0;
 }
+
+@media (max-width: 768px) {
+    .navbar {
+        height: auto;
+        padding: 10px 0;
+    }
+
+    .navbar-collapse {
+        display: none; 
+    }
+
+    .navbar-toggler[aria-expanded="true"] + .navbar-collapse {
+        display: block; 
+    }
+}
+
+.navbar-nav .nav-link {
+    position: relative;
+    padding-bottom: 5px;
+    transition: color 0.3s ease-in-out;
+    display: inline-block; 
+}
+
+.navbar-nav .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%; 
+    height: 2px;
+    background-color: white;
+    transition: width 0.4s ease-in-out;
+}
+
+.navbar-nav .nav-link:hover::after {
+    width: 100%; 
+}
+
+@media (max-width: 768px) {
+    .navbar-nav .nav-link {
+        position: relative;
+        padding-bottom: 5px;
+        transition: color 0.3s ease-in-out;
+        display: inline-block; 
+    }
+    .navbar-nav .nav-link::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 0%;
+        height: 2px;
+        background-color: white;
+        transition: width 0.4s ease-in-out;
+    }
+    .navbar-nav .nav-link:hover::after,
+    .navbar-nav .nav-link:focus::after {
+        width: 100%;
+    }
+}
+
+
+
+
 
 nav ul {
     list-style: none;
@@ -58,11 +105,6 @@ nav a {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-nav a:hover {
-    color: black;
-    background-color: #f0f4f8;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-}
 
 .checkbtn {
     font-size: 22px;
@@ -75,70 +117,11 @@ nav a:hover {
     transition: display 0.3s ease;
 }
 
-#check {
-    display: none;
-    position: absolute;
-    top: 0;
-    right: 0;
-    z-index: 1000;
-}
 
-@media (max-width: 890px) {
-    .checkbtn {
-        display: block;
-    }
-    
-    ul {
-        position: fixed;
-        width: 20%;
-        height: 100vh;
-        background: #2c3e50;
-        top: 89px;
-        left: -100%;
-        text-align: center;
-        transition: all .5s ease;
-        
-    }
-    nav ul li {
-        display: block;
-        margin: 50px 0;
-        margin-left: 10px;
-        line-height: 30px;
-    }
-    nav ul li a {
-        font-size: 20px;
-    }
-    a:hover,
-    a.active {
-        background: none;
-        color: #0082e6;
-    }
-    #check:checked~ul {
-        left: 0;
-    }
-   ul {
-    display: none;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-    #check:checked ~ ul {
-    display: block;
-    opacity: 1;
-}
-    nav ul li a {
-        padding: 10px;
-        width:100%;
-        border-radius: 5px;
-    }
-    nav ul li a:hover {
-    background-color: rgba(255, 255, 255, 0.82);
-    color: rgba(0, 0, 0, 0.591);
-    transition: background-color 0.3s ease;
-    }
-}
-
-.hero {
-    background-attachment: fixed; 
+.hero { 
+    background-image: url('images/backgroundimage.jpg'); 
+    background-size: cover;
+    background-position: center;
     color: white;
     text-align: center;
     padding: 10rem 0;
@@ -146,6 +129,11 @@ nav a:hover {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position:relative;
+
+@media(max-width:400px){
+    padding:5rem 0;
+}
 }
   
 .hero h2 {
@@ -162,6 +150,7 @@ nav a:hover {
 @media (max-width: 480px) {
     .hero h2 {
         font-size: 2rem; 
+        padding-bottom: 2rem;
     }
 }
   
@@ -178,6 +167,8 @@ nav a:hover {
   
 .services {
     padding: 4rem 2rem;
+    border:0px;
+
 }
   
 .services center {
@@ -191,14 +182,20 @@ nav a:hover {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(18.75rem, 1fr)); 
     grid-gap: 2rem;
+
+  @media (max-width:400px) {
+    grid-gap: 3rem;
+  }
 }
-  
 .card {
     background-color: #fff;
-    border-radius: 0.3125rem;
     padding: 1rem;
     transition: transform 0.3s ease;
     position: relative;
+    --bs-card-border-width: 0px !important;
+    --bs-card-border-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
 }
 
 .card img {
@@ -218,11 +215,10 @@ nav a:hover {
     margin: 0.5rem;
     padding: 0.5rem;
     padding-left: 0.75rem;
+   
 }
   
-.card:hover {
-    transform: translateY(-0.3125rem); 
-}
+
   
 .card center {
     margin-bottom: 1rem;
@@ -251,7 +247,8 @@ nav a:hover {
 .c1 {
     font-size: x-large;
     font-family: Arial, Helvetica, sans-serif;
-    padding-bottom: 5rem;
+    padding-bottom: 4rem;
+    padding-top: 4rem;
 }
   
 .c2 {
@@ -273,14 +270,18 @@ nav a:hover {
   
 .contact-info > div {
     text-align: left;
-    padding: 4rem;
+    padding: 2rem;
 }
   
 .contact-info .address {
     text-align: center;
 }
   
-.hours h3 {
+.hours {
+    text-align: center;
+}
+h4{
+    padding-bottom: 1rem;
     text-align: center;
 }
   
@@ -289,198 +290,6 @@ nav a:hover {
     color: rgb(72, 71, 71);
 }
   
-.chatbot-container {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 9999;
-}
-
-.chatbot-button {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background-color: #90caf9; 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-}
-
-.chatbot-icon {
-    width: 25px;
-    height: 25px;
-    fill: #333; 
-}
-
-.chat-window {
-    position:fixed;
-    bottom: 1.2rem;
-    right: 1.2rem;
-    background-color: #fff;
-    border-radius: 1rem;
-    padding: 1.2rem;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    display: none;
-    width: 300px; 
-    max-width: 90vw;
-    max-height: 60vh; 
-    overflow-x: hidden;
-    overflow-y: auto;
-    transition: all 0.3s ease;
-    transform: translateY(20px);
-    opacity: 0;
-}
-
-@media (max-width: 768px) {
-    .chat-window {
-        max-width: 90%; 
-        width: 90%; 
-        height: 60vh; 
-        bottom: 10px; 
-        right: 10px; 
-    }
-}
-
-@media (max-width: 600px) {
-    .chat-window {
-        max-width: 95%;
-        width: 75%; 
-        height: 70vh; 
-        bottom: 5px; 
-        right: 5px; 
-    }
-}
-
-@media (max-width: 480px) {
-    .chat-window {
-        max-width: 100%; 
-        width: 50%; 
-        height: 50vh; 
-        bottom: 0; 
-        right: 0;
-        border-radius: 0;
-    }
-}
-
-.chat-window.visible {
-    transform: translateY(0);
-    opacity: 1;
-}
-
-
-
-.chat-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 10px;
-}
-
-.chat-title {
-    font-size: 18px;
-    font-weight: bold;
-}
-
-.close-button {
-    cursor: pointer;
-}
-
-.chat-messages {
-    max-height: 200px;
-    overflow-y: auto;
-    margin-bottom: 10px;
-}
-
-.chat-message {
-    margin-bottom: 5px;
-    padding: 5px 10px;
-    border-radius: 5px;
-}
-
-.chat-message.bot {
-    background-color: #f0f4f8;
-    padding: 12px;
-    border-radius: 8px;
-    margin: 8px 0;
-    line-height: 1.5;
-    color: #333;
-    position: relative;
-}
-
-.chat-message.bot::before {
-    content: '';
-    position: absolute;
-    left: -8px;
-    top: 12px;
-    width: 0;
-    height: 0;
-    border-top: 8px solid transparent;
-    border-bottom: 8px solid transparent;
-    border-right: 8px solid #f0f4f8;
-}
-
-.form-group {
-    margin-bottom: 10px;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 5px;
-}
-
-.form-group input,
-.form-group textarea {
-    width: 90%;
-    padding: 12px;
-    border: 2px solid #e0e0e0;
-    border-radius: 8px;
-    font-size: 14px;
-    transition: all 0.3s ease;
-    background-color: #f8f9fa;
-}
-
-.form-group input:focus,
-.form-group textarea:focus {
-    border-color: #90caf9;
-    outline: none;
-    box-shadow: 0 0 0 3px rgba(144, 202, 249, 0.2);
-    background-color: #fff;
-}
-
-.form-group textarea {
-    resize: vertical;
-    min-height: 100px;
-}
-
-.chat-input {
-    display: flex;
-}
-
-button[type="submit"] {
-    width: 100%;
-    padding: 12px;
-    background-color: #90caf9;
-    color: #fff;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    transition: all 0.3s ease;
-}
-
-button[type="submit"]:hover {
-    background-color: #64b5f6;
-    transform: translateY(-1px);
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
-}
-
-button[type="submit"]:active {
-    transform: translateY(0);
-    box-shadow: none;
-}
 
 footer {
     color: black;
